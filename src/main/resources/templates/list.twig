@@ -1,0 +1,24 @@
+{% extends 'template.twig' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="lisPessoas">
+    <h1>Pessoas Cadastradas</h1>  
+    
+    <ul class="list-group">
+    {%for pessoa in pessoas %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Id: {{pessoa.id}} ,Nome: {{ pessoa.nome }}, Cidade: {{ pessoa.cidade }}
+        <div>
+          <button data-id="{{ pessoa.id }}" type="button" class="btn btn-md delete" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user-times"></i></button>          
+          <a href="/pessoa/{{ pessoa.id }}/endereco/create" class="btn"><i class="fas fa-map-marker"></i></a>
+          <a class="btn btn-md update" href="/update/{{ pessoa.id }}"> <i class="fas fa-user-edit"></i> </a>             
+        </div>
+      </li>
+     {% endfor %} 
+    </ul>        
+  </div>
+</div>
+
+{% endblock %}

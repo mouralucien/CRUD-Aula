@@ -1,0 +1,13 @@
+.footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+.jumbotron, .listPessoas{
+	margin-top: 50px;
+}
+
+h1{
+	font-size: 30px;
+}
